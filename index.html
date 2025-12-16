@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Deuda</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="scr/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <div class="deuda-card">
+
+            <!-- Header -->
+            <div class="card-header border-bottom">
+                <h1 class="titulo">Maxibanco</h1>
+            </div>
+
+            <div class="card-body">
+
+                
+                <div>
+                    <h5 class="nombre">Joyce Velasco</h5>
+                    <small class="codigo" style="opacity: 30%;">#000003</small>
+                </div>
+                
+                <hr>
+                
+                <div class="text-center ">
+                    <small class="nota" style="opacity: 30%;">Deuda actual</small>
+                    <h2 class="monto">$30.00</h2>
+                    <small class="nota" style="opacity: 30%;">No se aplicaran tarifas por pagos tardios</small>
+                </div>
+
+                <hr>
+
+                <div class="row my-3 text-center">
+                    <div class="col-6">
+                        <p class="detalle-titulo">Siguiente fecha de pago:</p>
+                        <p class="detalle-valor">30/12/25</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="detalle-titulo">Cantidad:</p>
+                        <p class="detalle-valor">$15.00</p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <p class="metodos-titulo text-center mt-4">Metodos de pago</p>
+
+                <div class="d-flex justify-content-center gap-5 mt-3">
+                    <img class="metodo"
+                        src="https://play-lh.googleusercontent.com/EOB037qfnKnKSEu45bPxFv46MUDZl-rf_RIgdA23htny1joRLrT3C1VcIeg_upbh-w"
+                        alt="img" data-bs-toggle="modal" data-bs-target="#modalBanco1">
+
+                    <img class="metodo"
+                        src="https://play-lh.googleusercontent.com/7sI8AqSrrs4pxrBzPefnPL_zQ-Uy7QIohkA-4uGSqemXxQW7muMgaOVk6cdwMlwKI6A"
+                        alt="img" data-bs-toggle="modal" data-bs-target="#modalBanco2">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalBanco1" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light rounded-4">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Transferencia Bancaria</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <p><strong>Banco:</strong> Banco Cuscatlan</p>
+                    <p><strong>Titular:</strong> Jorge Herrera</p>
+                    <p><strong>N° Cuenta:</strong></p>
+                    <h5 id="cuenta1">401495001846110</h5>
+
+                    <button class="btn btn-outline-light mt-3" onclick="copiarCuenta('cuenta1')">
+                        Copiar numero de cuenta
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalBanco2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light rounded-4">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Transferencia Bancaria</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <p><strong>Banco:</strong> Banco Agricola</p>
+                    <p><strong>Titular:</strong>Jorge Herrera</p>
+                    <p><strong>N° Cuenta:</strong></p>
+                    <h5 id="cuenta2">3114916056</h5>
+
+                    <button class="btn btn-outline-light mt-3" onclick="copiarCuenta('cuenta2')">
+                        Copiar numero de cuenta
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="alertaCopiado"
+        class="alert alert-success text-center position-fixed top-0 start-50 translate-middle-x mt-3 d-none"
+        style="z-index: 1055; width: 90%; max-width: 400px;">
+        Número de cuenta copiado
+    </div>
+
+
+
+    <script>
+        function copiarCuenta(id) {
+            const texto = document.getElementById(id).innerText;
+            const alerta = document.getElementById("alertaCopiado");
+
+            navigator.clipboard.writeText(texto).then(() => {
+                // Mostrar alerta
+                alerta.classList.remove("d-none");
+                alerta.classList.add("show");
+
+                // Ocultarla después de 3 segundos
+                setTimeout(() => {
+                    alerta.classList.add("d-none");
+                    alerta.classList.remove("show");
+                }, 3000);
+            });
+        }
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

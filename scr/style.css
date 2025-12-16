@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0e17;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Contenedor app */
+.app-container {
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Card ahora es la página */
+.deuda-card {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, #0e1320, #080b14);
+    color: #cfcfcf;
+    border-radius: 0;
+}
+
+/* Header */
+.card-header {
+    background: transparent;
+    padding: 1rem 1.2rem;
+}
+
+.titulo {
+    color: #fdc72b;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Body */
+.card-body {
+    padding: 1.2rem;
+}
+
+.nombre {
+    font-weight: 600;
+    margin: 0;
+}
+
+.codigo {
+    color: #777;
+}
+
+/* Deuda */
+.label {
+    color: #9aa0a6;
+}
+
+.monto {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #e6e6e6;
+    margin: 0;
+}
+
+.nota {
+    color: #7a7a7a;
+    font-size: 0.85rem;
+}
+
+/* Detalles */
+.detalle-titulo {
+    font-size: 0.85rem;
+    color: #8a8a8a;
+}
+
+.detalle-valor {
+    font-weight: 600;
+    color: #d1d1d1;
+}
+
+/* Métodos */
+.metodos-titulo {
+    color: #8a8a8a;
+}
+
+.metodo {
+    width: 70px;
+    height: 70px;
+    border: 1px solid #6f6f6f;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a9a9a;
+    font-weight: 600;
+}
+
