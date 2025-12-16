@@ -26,6 +26,9 @@ body {
 
 /* Header */
 .card-header {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
     background: transparent;
     padding: 1rem 1.2rem;
 }
